@@ -1,0 +1,1495 @@
+{
+  "name": "Clinic Tickler Email to Patient Reminder with Approval Routing",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## 3. ROUTE & SAVE\nRoute drafts to care-type-specific sheets",
+        "height": 800,
+        "width": 500,
+        "color": 3
+      },
+      "id": "ffe4e21e-67a9-46fc-8014-4bfff5f2c33c",
+      "name": "Sticky Note 8b4cd474",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1856,
+        48
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1SqJFAzqWtE6X_kQAd1_iTYpSVdubWA3GcRHjR8KKr1E"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1SqJFAzqWtE6X_kQAd1_iTYpSVdubWA3GcRHjR8KKr1E/edit?pli=1&gid=1251392641#gid=1251392641",
+          "mode": "url"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "original_email_id"
+          ],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "cbc89035-6ae9-43e5-8c90-278f34fbc4d0",
+      "name": "Save to Other Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1840,
+        1264
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "MkpauAlXasG1qGix",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1SqJFAzqWtE6X_kQAd1_iTYpSVdubWA3GcRHjR8KKr1E"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1SqJFAzqWtE6X_kQAd1_iTYpSVdubWA3GcRHjR8KKr1E/edit?pli=1&gid=432591612#gid=432591612",
+          "mode": "url"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "original_email_id"
+          ],
+          "schema": [
+            {
+              "id": "draft_subject",
+              "displayName": "draft_subject",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "draft_body",
+              "displayName": "draft_body",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "4784b65c-a879-4e1d-8caf-8a216af6cc2f",
+      "name": "Save to Referral/Flu Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1840,
+        1072
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "MkpauAlXasG1qGix",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1SqJFAzqWtE6X_kQAd1_iTYpSVdubWA3GcRHjR8KKr1E"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1SqJFAzqWtE6X_kQAd1_iTYpSVdubWA3GcRHjR8KKr1E/edit?pli=1&gid=1005601828#gid=1005601828",
+          "mode": "url"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "original_email_id"
+          ],
+          "schema": [
+            {
+              "id": "draft_subject",
+              "displayName": "draft_subject",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "draft_body",
+              "displayName": "draft_body",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "2292a6f7-ba05-4d5e-82f0-835724d9251a",
+      "name": "Save to Bloodwork Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1840,
+        880
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "MkpauAlXasG1qGix",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1SqJFAzqWtE6X_kQAd1_iTYpSVdubWA3GcRHjR8KKr1E"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1SqJFAzqWtE6X_kQAd1_iTYpSVdubWA3GcRHjR8KKr1E/edit?pli=1&gid=353806036#gid=353806036",
+          "mode": "url"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": null,
+          "matchingColumns": [
+            "original_email_id"
+          ],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "c2e2887d-8cca-42ef-97db-21de79c289fb",
+      "name": "Save to Diabetes Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1840,
+        688
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "MkpauAlXasG1qGix",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1SqJFAzqWtE6X_kQAd1_iTYpSVdubWA3GcRHjR8KKr1E"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1SqJFAzqWtE6X_kQAd1_iTYpSVdubWA3GcRHjR8KKr1E/edit?pli=1&gid=1408996759#gid=1408996759",
+          "mode": "url"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "original_email_id"
+          ],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "720976b5-fc41-4c5e-b46e-896bc39c1d25",
+      "name": "Save to Vaccines Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1840,
+        496
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "MkpauAlXasG1qGix",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1SqJFAzqWtE6X_kQAd1_iTYpSVdubWA3GcRHjR8KKr1E"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1SqJFAzqWtE6X_kQAd1_iTYpSVdubWA3GcRHjR8KKr1E/edit?pli=1&gid=736493862#gid=736493862",
+          "mode": "url"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "original_email_id"
+          ],
+          "schema": [
+            {
+              "id": "draft_subject",
+              "displayName": "draft_subject",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "draft_body",
+              "displayName": "draft_body",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "8bd40c3b-8773-4fe2-9e0c-9ef00a809101",
+      "name": "Save to Colorectal Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1840,
+        304
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "MkpauAlXasG1qGix",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1SqJFAzqWtE6X_kQAd1_iTYpSVdubWA3GcRHjR8KKr1E"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1SqJFAzqWtE6X_kQAd1_iTYpSVdubWA3GcRHjR8KKr1E/edit?pli=1&gid=0#gid=0",
+          "mode": "url"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "original_email_id"
+          ],
+          "schema": [
+            {
+              "id": "draft_subject",
+              "displayName": "draft_subject",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "draft_body",
+              "displayName": "draft_body",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "aedede8f-496a-45a0-b492-961ac9fa681c",
+      "name": "Save to Mammogram Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1840,
+        112
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "MkpauAlXasG1qGix",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $(\"Build Email from Template\").item.json.care_type }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    },
+                    "rightValue": "Mammogram",
+                    "id": "96cf32ba-faed-4064-8524-a8183a7c3359"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Mammogram"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $(\"Build Email from Template\").item.json.care_type }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    },
+                    "rightValue": "Colorectal",
+                    "id": "befe6895-87e6-44a0-92ea-052e1d604b1d"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Colorectal"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $(\"Build Email from Template\").item.json.care_type }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    },
+                    "rightValue": "Vaccine",
+                    "id": "db9e363f-9d01-4f72-aaea-aed064ee6640"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Vaccines"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $(\"Build Email from Template\").item.json.care_type }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    },
+                    "rightValue": "Diabetes",
+                    "id": "ad41c649-cc37-4008-b052-0b931be50d7a"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Diabetes"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $(\"Build Email from Template\").item.json.care_type }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    },
+                    "rightValue": "Bloodwork",
+                    "id": "3a6b35f2-ba01-428b-b043-5c02d63bc904"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Repeat Bloodwork"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $(\"Build Email from Template\").item.json.care_type }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    },
+                    "rightValue": "Referral",
+                    "id": "4fe8f850-0b31-4a39-8557-8f4aec4303e5"
+                  },
+                  {
+                    "leftValue": "={{ $(\"Build Email from Template\").item.json.care_type }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    },
+                    "rightValue": "Flu",
+                    "id": "6f391d88-c47b-4b90-bd32-bbf9cc7113f4"
+                  }
+                ],
+                "combinator": "or"
+              },
+              "renameOutput": true,
+              "outputKey": "Referral/Flu"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra",
+          "renameFallbackOutput": "Other"
+        }
+      },
+      "id": "4a952ae1-2617-469c-87e4-c192357a3922",
+      "name": "Route by Care Type",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        1616,
+        608
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "draft",
+        "subject": "=APPROVAL NEEDED – Patient reminder for {{ $(\"Prepare Tickler Record\").item.json.patient_name }} / {{ $(\"Prepare Tickler Record\").item.json.care_type }}",
+        "message": "=TICKLER REMINDER APPROVAL REQUEST\n\nPatient: {{ $(\"Prepare Tickler Record\").item.json.patient_name }}\nEmail: {{ $(\"Prepare Tickler Record\").item.json.patient_email || \"NO EMAIL ON FILE\" }}\nCare Type: {{ $(\"Prepare Tickler Record\").item.json.care_type }}\nDue Date: {{ $(\"Prepare Tickler Record\").item.json.due_date }}\nTickler Created: {{ $(\"Prepare Tickler Record\").item.json.tickler_created_date }}\n\n--- DRAFT EMAIL ---\nSubject: {{ $json.draft_subject }}\n\n{{ $json.draft_body }}\n--- END DRAFT ---\n\nINSTRUCTIONS:\nReply with \"APPROVE\" to send as is.\nReply with \"REVISE: [your instructions]\" to request changes.\nReply with \"CANCEL\" to not send this reminder.\n\nOriginal Email ID: {{ $(\"Prepare Tickler Record\").item.json.original_email_id }}",
+        "options": {
+          "sendTo": "mekranishazli@gmail.com"
+        }
+      },
+      "id": "9a7a28dc-85e1-40f7-8f86-1dba33e8fb1f",
+      "name": "Create Draft for Doctor Approval",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        2064,
+        688
+      ],
+      "webhookId": "ae8c67bf-f89e-431c-8fd0-672101361034",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "WMUwKR20evTySuvW",
+          "name": "Gmail OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## 7. AUDIT TRAIL\nUpdate status in data table",
+        "height": 600,
+        "width": 900,
+        "color": 7
+      },
+      "id": "12f7b807-6de8-4a34-a522-172f7b918e04",
+      "name": "Sticky Note 7791c9ff",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2560,
+        256
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## 6. SEND OR NOTIFY\nSend to patient or flag for manual contact",
+        "height": 400,
+        "width": 600,
+        "color": 6
+      },
+      "id": "f487e2ec-f8dc-4fb9-9857-2b1d80aae7dc",
+      "name": "Sticky Note adc024aa",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2816,
+        256
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## 5. DECISION LOGIC\nRoute based on approval response",
+        "height": 200,
+        "width": 300,
+        "color": 5
+      },
+      "id": "7ff72d5d-2ba4-4e84-9958-d5313d73f7a4",
+      "name": "Sticky Note 3c3d303f",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2624,
+        -16
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## 4. APPROVAL WORKFLOW\nSend to doctor/admin and wait for response",
+        "height": 200,
+        "width": 900,
+        "color": 4
+      },
+      "id": "96bb5ff2-2c91-4c20-a96e-1cad4623021c",
+      "name": "Sticky Note 2a5de17b",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1424,
+        -192
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## 2. PARSE & DRAFT\nExtract patient data and generate AI reminder",
+        "height": 200,
+        "width": 1200,
+        "color": 3
+      },
+      "id": "a719cf9f-e7dd-472f-80c7-2cc2103d7956",
+      "name": "Sticky Note 5a3bd363",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        496,
+        128
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## 1. TRIGGER\nFetches new tickler emails from EMR system",
+        "height": 200,
+        "width": 300,
+        "color": 2
+      },
+      "id": "66120e5d-691f-4115-a2a4-2edca74436b0",
+      "name": "Sticky Note 6f7529dd",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        176,
+        128
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "original_email_id",
+              "keyValue": "={{ $('Tickler Email Trigger').item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "status": "Cancelled",
+            "cancelled_date": "={{ $now.toISO() }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "f5a78dbd-b2f6-45ef-8943-f7f23b4d4ccf",
+      "name": "Update Status: Cancelled",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        2736,
+        784
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "original_email_id",
+              "keyValue": "={{ $('Tickler Email Trigger').item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "status": "Needs manual contact",
+            "flagged_date": "={{ $now.toISO() }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "88e3951d-92c0-40ff-a435-9a809b8de939",
+      "name": "Update Status: Manual Contact",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        3184,
+        688
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "mekranishazli@gmail.com",
+        "subject": "=MANUAL CONTACT NEEDED – {{ $json.patient_name }} / {{ $json.care_type }}",
+        "emailType": "text",
+        "message": "=MANUAL CONTACT REQUIRED\n\nPatient: {{ $json.patient_name }}\nCare Type: {{ $json.care_type }}\nDue Date: {{ $json.due_date }}\n\nThis patient does not have an email address on file.\nPlease contact them by phone to schedule their appointment.\n\nDraft message (for reference):\n{{ $json.draft_body }}",
+        "options": {}
+      },
+      "id": "009122eb-5835-4fd3-a509-6b7de71d1ead",
+      "name": "Notify: No Email on File",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        2960,
+        688
+      ],
+      "webhookId": "6e5fb114-9575-4aa5-9898-8661323f04e2",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "WMUwKR20evTySuvW",
+          "name": "Gmail OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "original_email_id",
+              "keyValue": "={{ $('Tickler Email Trigger').item.json.id }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "status": "Sent",
+            "sent_date": "={{ $now.toISO() }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "7582dabb-ac0d-48c9-b2b2-f411212bf81d",
+      "name": "Update Status: Sent",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        3184,
+        496
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.patient_email }}",
+        "subject": "={{ $json.draft_subject }}",
+        "emailType": "text",
+        "message": "={{ $json.draft_body }}",
+        "options": {}
+      },
+      "id": "e534bda0-df40-4866-b8cd-62f426071601",
+      "name": "Send Reminder to Patient",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        2960,
+        496
+      ],
+      "webhookId": "8bee8f30-7ff7-4342-9dd3-98f73262d88b",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "WMUwKR20evTySuvW",
+          "name": "Gmail OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "1",
+              "leftValue": "={{ $json.patient_email }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "isNotEmpty"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5c0e7a4b-23ea-4647-9e83-1408225b047f",
+      "name": "Check Patient Email",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        2736,
+        592
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "combinator": "or",
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "1",
+              "leftValue": "={{ $json.approval_response }}",
+              "rightValue": "APPROVE",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c1ea4cd1-0386-45d3-b581-c9ec7a2e1eb9",
+      "name": "Check Approval Response",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        2512,
+        688
+      ]
+    },
+    {
+      "parameters": {
+        "resume": "webhook",
+        "httpMethod": "POST",
+        "responseMode": "lastNode",
+        "limitWaitTime": true,
+        "resumeAmount": 7,
+        "resumeUnit": "days",
+        "options": {
+          "webhookSuffix": "{{ $('Save Draft to Google Sheet').item.json.original_email_id }}"
+        }
+      },
+      "id": "22ebe56e-10a9-4a01-ab49-0fa653be2e7b",
+      "name": "Wait for Approval Reply",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2288,
+        688
+      ],
+      "webhookId": "e224b3c8-625a-4c38-bea7-ae5935034943"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "f1289309-af10-490e-aff3-84aaf87d195e",
+      "name": "OpenAI Model for Draft",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        1120,
+        912
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "1SDqPysakq2Gzddu",
+          "name": "n8n free OpenAI API credits"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a helpful medical clinic assistant in Ontario, Canada. Generate ONLY a brief, informative description about the following care type for use in a patient reminder email.\n\nCare Type: {{ $json.care_type }}\n\nWrite 1-2 sentences explaining what this test/screening is and why it is important for preventative health. Keep it simple, non-urgent, and avoid specific medical advice.\n\nOutput ONLY the description text, no JSON, no extra formatting.",
+        "options": {
+          "systemMessage": "You are a helpful medical clinic assistant. Output only the care type description text."
+        }
+      },
+      "id": "c5e2297b-358a-4037-b325-5e74d3c387dc",
+      "name": "Draft Patient Reminder (AI)",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        1040,
+        688
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "patient_name",
+              "value": "={{ $json.output.patient_name }}",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "patient_email",
+              "value": "={{ $json.output.patient_email }}",
+              "type": "string"
+            },
+            {
+              "id": "3",
+              "name": "care_type",
+              "value": "={{ $json.output.care_type }}",
+              "type": "string"
+            },
+            {
+              "id": "4",
+              "name": "tickler_created_date",
+              "value": "={{ $json.output.tickler_created_date }}",
+              "type": "string"
+            },
+            {
+              "id": "5",
+              "name": "due_date",
+              "value": "={{ $json.output.due_date }}",
+              "type": "string"
+            },
+            {
+              "id": "6",
+              "name": "original_email_id",
+              "value": "={{ $('Tickler Email Trigger').item.json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "7",
+              "name": "raw_body",
+              "value": "={{ $('Tickler Email Trigger').item.json.text }}",
+              "type": "string"
+            },
+            {
+              "id": "8",
+              "name": "status",
+              "value": "Pending approval",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "24b1c52f-dcc7-4b79-83f4-10707a72aa1f",
+      "name": "Prepare Tickler Record",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        816,
+        688
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "f30e9f98-f27b-48c4-992d-2fd32c5eae43",
+      "name": "OpenAI Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        544,
+        912
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "1SDqPysakq2Gzddu",
+          "name": "n8n free OpenAI API credits"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "text": "={{ $json.text }}",
+        "attributes": {
+          "attributes": [
+            {
+              "name": "patient_name",
+              "description": "Full name of the patient"
+            },
+            {
+              "name": "patient_email",
+              "description": "Email address of the patient (may be missing)",
+              "required": true
+            },
+            {
+              "name": "care_type",
+              "description": "Type of preventative care due (e.g., Pap test, colon cancer screening, annual physical)",
+              "required": true
+            },
+            {
+              "name": "tickler_created_date",
+              "type": "date",
+              "description": "Date the tickler was created or referenced"
+            },
+            {
+              "name": "due_date",
+              "type": "date",
+              "description": "Due date or recommended time frame for the care"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "cedc7003-d043-49ec-8329-f74b0d319de1",
+      "name": "Parse Tickler Body",
+      "type": "@n8n/n8n-nodes-langchain.informationExtractor",
+      "typeVersion": 1.2,
+      "position": [
+        464,
+        688
+      ]
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "simple": false,
+        "filters": {
+          "q": "subject:tickle",
+          "readStatus": "both"
+        },
+        "options": {}
+      },
+      "id": "1d23cd81-5e3e-408c-9a37-9b3a5cae286c",
+      "name": "Tickler Email Trigger",
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        240,
+        688
+      ],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "WMUwKR20evTySuvW",
+          "name": "Gmail OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "draft_subject",
+              "value": "=Preventative Care Reminder: {{ $(\"Prepare Tickler Record\").item.json.care_type }}",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "draft_body",
+              "value": "=Hello {{ $(\"Prepare Tickler Record\").item.json.patient_name }},\n\nThis is a preventative care reminder from our clinic. Our records indicate your {{ $(\"Prepare Tickler Record\").item.json.care_type }} is due by {{ $(\"Prepare Tickler Record\").item.json.due_date }}. {{ $json.output }}\n\nPlease book your follow-up appointment by phone or through our online booking system at your convenience. If you have any questions, feel free to contact our clinic team.\n\nThank you,\nYour clinic team",
+              "type": "string"
+            },
+            {
+              "id": "3",
+              "name": "patient_name",
+              "value": "={{ $(\"Prepare Tickler Record\").item.json.patient_name }}",
+              "type": "string"
+            },
+            {
+              "id": "4",
+              "name": "patient_email",
+              "value": "={{ $(\"Prepare Tickler Record\").item.json.patient_email }}",
+              "type": "string"
+            },
+            {
+              "id": "5",
+              "name": "care_type",
+              "value": "={{ $(\"Prepare Tickler Record\").item.json.care_type }}",
+              "type": "string"
+            },
+            {
+              "id": "6",
+              "name": "tickler_created_date",
+              "value": "={{ $(\"Prepare Tickler Record\").item.json.tickler_created_date }}",
+              "type": "string"
+            },
+            {
+              "id": "7",
+              "name": "due_date",
+              "value": "={{ $(\"Prepare Tickler Record\").item.json.due_date }}",
+              "type": "string"
+            },
+            {
+              "id": "8",
+              "name": "original_email_id",
+              "value": "={{ $(\"Prepare Tickler Record\").item.json.original_email_id }}",
+              "type": "string"
+            },
+            {
+              "id": "9",
+              "name": "raw_body",
+              "value": "={{ $(\"Prepare Tickler Record\").item.json.raw_body }}",
+              "type": "string"
+            },
+            {
+              "id": "10",
+              "name": "status",
+              "value": "={{ $(\"Prepare Tickler Record\").item.json.status }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "dff0032c-293b-4d7d-82e4-82e4dc992d2f",
+      "name": "Build Email from Template",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1392,
+        688
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Save to Other Sheet": {
+      "main": [
+        [
+          {
+            "node": "Create Draft for Doctor Approval",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save to Referral/Flu Sheet": {
+      "main": [
+        [
+          {
+            "node": "Create Draft for Doctor Approval",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save to Bloodwork Sheet": {
+      "main": [
+        [
+          {
+            "node": "Create Draft for Doctor Approval",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save to Diabetes Sheet": {
+      "main": [
+        [
+          {
+            "node": "Create Draft for Doctor Approval",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save to Vaccines Sheet": {
+      "main": [
+        [
+          {
+            "node": "Create Draft for Doctor Approval",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save to Colorectal Sheet": {
+      "main": [
+        [
+          {
+            "node": "Create Draft for Doctor Approval",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save to Mammogram Sheet": {
+      "main": [
+        [
+          {
+            "node": "Create Draft for Doctor Approval",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route by Care Type": {
+      "main": [
+        [
+          {
+            "node": "Save to Mammogram Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save to Colorectal Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save to Vaccines Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save to Diabetes Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save to Bloodwork Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save to Referral/Flu Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Save to Other Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notify: No Email on File": {
+      "main": [
+        [
+          {
+            "node": "Update Status: Manual Contact",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Draft for Doctor Approval": {
+      "main": [
+        [
+          {
+            "node": "Wait for Approval Reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Reminder to Patient": {
+      "main": [
+        [
+          {
+            "node": "Update Status: Sent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Patient Email": {
+      "main": [
+        [
+          {
+            "node": "Send Reminder to Patient",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Notify: No Email on File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Approval Response": {
+      "main": [
+        [
+          {
+            "node": "Check Patient Email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Update Status: Cancelled",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for Approval Reply": {
+      "main": [
+        [
+          {
+            "node": "Check Approval Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Model for Draft": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Draft Patient Reminder (AI)",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Draft Patient Reminder (AI)": {
+      "main": [
+        [
+          {
+            "node": "Build Email from Template",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Tickler Record": {
+      "main": [
+        [
+          {
+            "node": "Draft Patient Reminder (AI)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Parse Tickler Body",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Tickler Body": {
+      "main": [
+        [
+          {
+            "node": "Prepare Tickler Record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tickler Email Trigger": {
+      "main": [
+        [
+          {
+            "node": "Parse Tickler Body",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Email from Template": {
+      "main": [
+        [
+          {
+            "node": "Route by Care Type",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "c2ef937e-d730-493e-8f95-8649eba2867a",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "18926ef43fc23ee257659b3c4ee9caf5774cbd82070f1288782b93f4aff6c45a"
+  },
+  "nodeGroups": [],
+  "id": "o20EJruSozlOj1le",
+  "tags": []
+}
